@@ -16,5 +16,4 @@ Functional programming in JS - ES6 (EcmaScript 2015)
 11. Monads (On process)
 
 # Includes
-Babel Transpiler
-Highland 
+Babel Transpiler | Highland 
