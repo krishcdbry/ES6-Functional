@@ -1,0 +1,5 @@
+flipkart book cat 100
+flipkart car hundai 145
+flipkart bike bullet 300
+snapdeal book niceone 200
+snapdeal watch titan 100
