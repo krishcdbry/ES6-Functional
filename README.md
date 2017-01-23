@@ -12,8 +12,8 @@ Functional programming in JS - ES6 (EcmaScript 2015)
 7. Currying
 8. Functors
 9. Promise
-10. Stream.
+10. Streams
 11. Monads (On process)
 
 # Includes
-Babel Transpiler | Highland 
+Babel Transpiler | Highland
