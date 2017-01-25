@@ -1,4 +1,4 @@
-
+"use strict";
 
 /*
  Reduce is also the Higher order function like map, filter but it doesn't return a array.
@@ -9,20 +9,41 @@
 
 // Example
 
-const cartItems = [{ "name": "book-1", "price": 250 }, { "name": "book-2", "price": 450 }, { "name": "book-3", "price": 150 }, { "name": "book-4", "price": 750 }, { "name": "book-5", "price": 350 }];
+var cartItems = [{ "name": "book-1", "price": 250 }, { "name": "book-2", "price": 450 }, { "name": "book-3", "price": 150 }, { "name": "book-4", "price": 750 }, { "name": "book-5", "price": 350 }];
 
 // Traditional way of getting the sum of all items
 
-let total = 0;
-for (let item of cartItems) {
-  totalSum += item.price;
+var total = 0;
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = cartItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var item = _step.value;
+
+    totalSum += item.price;
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
 }
 
 console.log(totalSum);
 
 // Now in Functional programming way
 
-let totalSum = cartItems.reduce((sum, item) => {
+var totalSum = cartItems.reduce(function (sum, item) {
   return sum + item.price;
 }, 0);
 
@@ -30,7 +51,7 @@ console.log(totalSum);
 
 // Making it nested objects
 
-let output = cartItems.reduce((final, item) => {
+var output = cartItems.reduce(function (final, item) {
   final[item.name] = final[item.name] || [];
   final[item.name].push({
     'price': item.price

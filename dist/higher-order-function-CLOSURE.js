@@ -1,3 +1,4 @@
+"use strict";
 
 /*
 
@@ -11,11 +12,11 @@ Closure is simply called “THE FUNCTION WITH PRESERVED DATA” - Where we can f
 
 */
 
-let add = x => {
+var add = function add(x) {
   // Level 1
-  let add2 = y => {
+  var add2 = function add2(y) {
     // Level 2
-    let add3 = z => {
+    var add3 = function add3(z) {
       // Level 3
       return x + y + z;
     };
@@ -39,30 +40,30 @@ So now we can use in future add(5) by saving it into any variable. so that later
 
 // And also we can do method chaining
 
-let operations = init => {
+var operations = function operations(init) {
 
-  let final = init ? init : 1; // Private property
+  var final = init ? init : 1; // Private property
 
-  let add = num => {
+  var add = function add(num) {
     final = final + num; // Private property (Adding num)
     return opt;
   };
 
-  let multiply = num => {
+  var multiply = function multiply(num) {
     final = final * num; // Private property (Multiplying to num)
     return opt;
   };
 
-  let substract = num => {
+  var substract = function substract(num) {
     final = final - num; // Private property (Substract num)
     return opt;
   };
 
-  let print = () => {
+  var print = function print() {
     console.log(final); // Private property (Printint the value)
   };
 
-  let opt = {
+  var opt = {
     add: add,
     mul: multiply,
     sub: substract,
@@ -72,7 +73,7 @@ let operations = init => {
   return opt;
 };
 
-let newOperation = operations(50);
+var newOperation = operations(50);
 
 newOperation.mul(15).add(10).print(); // Here we are acheveing method chaining
 

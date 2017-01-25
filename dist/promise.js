@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 
 Promises are like a function callbacks but used for countering the async functionalitu of JS,
@@ -9,40 +11,40 @@ Here in JS - Promises are more powerful to make things work better , they can ev
 */
 
 // Promise 1 - To know that it is resolved
-let promiseOne = new Promise((resolve, reject) => {
+var promiseOne = new Promise(function (resolve, reject) {
   resolve("Hey");
 });
 
 // Promise 2 - Gives the reject function after a timeout
-let promiseTwo = new Promise((resolve, reject) => {
+var promiseTwo = new Promise(function (resolve, reject) {
   setTimeout(function () {
     reject("failed Boss");
   }, 2500);
 });
 
 // Enters inside the then function only when the promise 1 is success
-promiseOne.then(res => {
+promiseOne.then(function (res) {
   console.log(res);
 });
 
-promiseTwo.then(res => {
+promiseTwo.then(function (res) {
   console.log(res); // For success
-}, err => {
+}, function (err) {
   console.log(err); // For failure
 });
 
 // Checking all promises at a time
-Promise.all([promiseOne, promiseTwo]).then(data => {
+Promise.all([promiseOne, promiseTwo]).then(function (data) {
   console.log(data);
-}, err => {
+}, function (err) {
   console.log(err);
 });
 
 // To check the real world API
-fetch('https://api.icndb.com/jokes/random/-10').then(res => {
-  res.json().then(data => {
+fetch('https://api.icndb.com/jokes/random/-10').then(function (res) {
+  res.json().then(function (data) {
     console.log(data);
   });
-}).catch(err => {
+}).catch(function (err) {
   console.log(err);
 });

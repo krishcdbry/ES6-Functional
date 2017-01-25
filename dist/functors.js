@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 
 A functor is an object that has a map method.
@@ -14,20 +16,24 @@ A functor is an object that has a map method.
 
 // example
 
-let addOne = value => {
+var addOne = function addOne(value) {
   return value + 1;
 };
 
 // ES6 Way
 
 // Adding 1 to every element - Mean   1,2  ==> 2,3
-let plus1 = value => value + 1;
+var plus1 = function plus1(value) {
+  return value + 1;
+};
 
 // Substracting 1 to every element - Mean   2,3  ==> 1,2
-let minus1 = value => value - 1;
+var minus1 = function minus1(value) {
+  return value - 1;
+};
 
 // Getting next alphabet - abc ==> bcd
-let nextLetter = value => {
+var nextLetter = function nextLetter(value) {
   return String.fromCharCode(value.charCodeAt(0) + 1);
 };
 // Using functor
@@ -40,8 +46,8 @@ console.log("abc".split('').map(nextLetter).join("")); //  ["b", "c", "d"]
 // Now Another functor
 
 // This functor => function + constructor | This is taking the data and also the function need to be applied
-let stringFunctor = (data, fun) => {
-  return data.split("").map(char => {
+var stringFunctor = function stringFunctor(data, fun) {
+  return data.split("").map(function (char) {
     return String.fromCharCode(fun(char.charCodeAt(0)));
   }).join("");
 };
@@ -51,9 +57,9 @@ console.log(stringFunctor("KRISHCDBRY", minus1));
 
 console.log(stringFunctor);
 
-var promise = new Promise((resolve, reject) => {
+var promise = new Promise(function (resolve, reject) {
 
-  setTimeout(() => {
+  setTimeout(function () {
     resolve({
       "name": "krishcdbry",
       "salary": "$135k"
@@ -61,6 +67,8 @@ var promise = new Promise((resolve, reject) => {
   }, 1000);
 });
 
-var yesPromise = promise.map(x => x.name).then(res => {
+var yesPromise = promise.map(function (x) {
+  return x.name;
+}).then(function (res) {
   console.log(res);
 });

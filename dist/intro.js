@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 
  In JavaScript functions are first class citizens.
@@ -13,13 +15,13 @@ function jsFun() {
 
 // Also this function can be assigned to value as a anonymous function
 
-var jsFun = function () {
+var jsFun = function jsFun() {
   return "Hey I am a function but assigned to a variable";
 };
 
 // Proper example about using this
 
-var add = function (num) {
+var add = function add(num) {
   return num + 2;
 };
 
